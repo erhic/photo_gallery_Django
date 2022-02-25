@@ -29,7 +29,7 @@ git clone git@github.com:erhic/photo_gallery_Django.git
 Navigate in the directory that you have cloned the project.
 Inside the root folder, install virtual environment 
 ```
-python -m venv env
+python3 -m venv env
 ```
 env  is preffered virtual environment name, not fixed.
 
@@ -73,7 +73,7 @@ This project has been successfully deployed in heroku and database used is postg
 * [Bootstrap](https://icons.getbootstrap.com/) - The web front-end CSS framework used
 * [Python- pip](https://pypi.org/project/pip/) -Programming language & Dependency Management 
 * [Django](https://www.djangoproject.com/) - The web back-end Python framework used
-* [HTML](ttps://www.w3schools.com/html/) - Markup langauge used to render elements on the web pages.
+* [HTML](https://www.w3schools.com/html/) - Markup langauge used to render elements on the web pages.
 * [CSS](https://www.w3schools.com/css/) - Used to style webpage elements.
 * [Postgre](https://www.postgresql.org/developer/) - Used to store dynamic data as the database.
 
