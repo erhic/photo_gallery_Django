@@ -1,6 +1,6 @@
-# Project Title
+# Photo-Galley
 
-One Paragraph of project description goes here
+This a website to view a variety of photos  uploaded with their description.Photos are categorized based on location.
 
 ## Getting Started
 
@@ -11,28 +11,40 @@ These instructions will get you a copy of the project up and running on your loc
 What things you need to install the software and how to install them
 
 ```
-Give examples
+python 3.8.10
+virtual environment 
+pip install django
+pip install pillow
+pip install python-dotenv
 ```
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
 
-Say what the step will be
+
+Clone the project
+```
+git clone git@github.com:erhic/photo_gallery_Django.git
+ ```
+Navigate in the directory that you have cloned the project.
+Inside the root folder, install virtual environment 
+```
+python -m venv env
+```
+env  is preffered virtual environment name, not fixed.
+
+Activate you virtual environment in the terminal using the following command in you project  directory
 
 ```
-Give the example
+source env/bin/activate
 ```
-
-And repeat
-
+Install all the project dependecies.
 ```
-until finished
+pip install django
+pip install pillow
+pip install python-dotenv
 ```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
+<!-- ## Running the tests
 
 Explain how to run the automated tests for this system
 
@@ -50,38 +62,34 @@ Explain what these tests test and why
 
 ```
 Give an example
-```
+``` -->
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+This project has been successfully deployed in heroku and database used is postgre.
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [Bootstrap](https://icons.getbootstrap.com/) - The web front-end CSS framework used
+* [Python- pip](https://pypi.org/project/pip/) -Programming language & Dependency Management 
+* [Django](https://www.djangoproject.com/) - The web back-end Python framework used
+* [HTML](ttps://www.w3schools.com/html/) - Markup langauge used to render elements on the web pages.
+* [CSS](https://www.w3schools.com/css/) - Used to style webpage elements.
+* [Postgre](https://www.postgresql.org/developer/) - Used to store dynamic data as the database.
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+Please read [CONTRIBUTING doc](CONTRIBUTING) for details on our code of conduct, and the process for submitting pull requests to us.
 
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Eric N**  - [Photo-Galley](https://github.com/erhic/photo_gallery_Django)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/erhic) who participated in this project.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+This project is licensed under the MIT License - see the [LICENSE](LICENSE)  for details
 
-## Acknowledgments
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
