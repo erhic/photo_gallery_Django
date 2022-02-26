@@ -1,5 +1,7 @@
-from multiprocessing import context
+
 from django.shortcuts import render
+from .models import Image,Category,Location
+
 
 
 # Create your views here.
@@ -21,6 +23,10 @@ posts=[
 ]
 
 def home(request):
-    context={'posts':posts}
+    context={'posts':Image.objects.all()}
     return render (request,'home.html',context)
+
+# def post(request):
+#     context={'':}
+#     return render(request,'postform.html',context)
     
