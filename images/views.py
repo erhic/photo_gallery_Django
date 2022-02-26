@@ -32,10 +32,10 @@ def post(request):
     
     if request.method=='POST':
         form= ImageForm(request.POST)
-    
-    if form.is_valid():
-        form.save
-        return redirect ('home')
+        if form.is_valid():
+            form.save()
+       
+        return redirect ('home-images')
     context={'form':form}
     return render(request,'postform.html',context)
     
