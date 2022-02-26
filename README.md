@@ -15,6 +15,7 @@ python 3.8.10
 virtual environment 
 pip install django
 pip install pillow
+pip install cloudinary
 pip install python-dotenv
 ```
 
@@ -42,6 +43,7 @@ Install all the project dependecies.
 ```
 pip install django
 pip install pillow
+pip install cloudinary
 pip install python-dotenv
 ```
 <!-- ## Running the tests
