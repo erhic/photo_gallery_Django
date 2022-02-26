@@ -10,8 +10,8 @@ class Image(models.Model):
     image=models.FileField()
     image_name=models.CharField(max_length=150)
     image_descr=models.TextField(max_length=1000)
-    image_location=models.ForeignKey('Category')
-    image_category=models.ForeignKey('Location')
+    image_location=models.ForeignKey('Category',on_delete=models.SET_NULL)
+    image_category=models.ForeignKey('Location',on_delete=models.SET_NULL)
     date_posted=models.DateTimeField(default=timezone.now)
     time_posted=models.DateTimeField(auto_now_add=True)
     
