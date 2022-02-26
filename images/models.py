@@ -3,6 +3,7 @@ from time import timezone
 from turtle import mode
 from django.db import models
 from django.utils import timezone
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -12,6 +13,7 @@ class Image(models.Model):
     image_descr=models.TextField(max_length=1000)
     image_location=models.ForeignKey('Category',on_delete=models.SET_NULL)
     image_category=models.ForeignKey('Location',on_delete=models.SET_NULL)
+    user=models.ForeignKey(User )
     date_posted=models.DateTimeField(default=timezone.now)
     time_posted=models.DateTimeField(auto_now_add=True)
     
