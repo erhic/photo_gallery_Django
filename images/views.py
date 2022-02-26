@@ -1,6 +1,7 @@
 
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .models import Image,Category,Location
+from .form import ImageForm
 
 
 
@@ -26,7 +27,15 @@ def home(request):
     context={'posts':Image.objects.all()}
     return render (request,'home.html',context)
 
-# def post(request):
-#     context={'':}
-#     return render(request,'postform.html',context)
+def post(request):
+    form =ImageForm()
+    
+    if request.method=='POST':
+        form= ImageForm(request.POST)
+    
+    if form.is_valid():
+        form.save
+        return redirect ('home')
+    context={'form':form}
+    return render(request,'postform.html',context)
     

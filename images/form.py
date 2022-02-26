@@ -6,4 +6,4 @@ from .models import Image,Category,Location
 class ImageForm(ModelForm):
     class Meta:
         model=Image
-        field='__all__'
+        fields='__all__'
