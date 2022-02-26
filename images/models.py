@@ -13,7 +13,7 @@ class Image(models.Model):
     image_descr=models.TextField(max_length=1000)
     image_location=models.ForeignKey('Category',on_delete=models.SET_NULL)
     image_category=models.ForeignKey('Location',on_delete=models.SET_NULL)
-    user=models.ForeignKey(User )
+    user=models.ForeignKey(User ,on_delete=models.CASCADE)
     date_posted=models.DateTimeField(default=timezone.now)
     time_posted=models.DateTimeField(auto_now_add=True)
     
