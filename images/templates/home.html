@@ -1,3 +1,22 @@
-{%extends 'base.html'%} {%block content%} {%for post in posts%}
-<h1>{{post.location}}............{{post.category}}.......{{post.image}}</h1>
-{%endfor%} {%endblock%}
+ {%extends 'base.html'%} {%block content%}
+
+<!-- <div class="" style="max-width: 450px;display:grid;grid-template-rows:1fr ;">
+    <img src="{{post.image.url}}" style="height:40vh;" alt="">
+    <p></p>
+</div> -->
+
+<div class="container mx-auto mt-4">
+    <div class="row">{%for post in images%}
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+                <img src="{{post.image.url}}" class="card-img-top" style="height:40vh;" alt="...">
+                <div class="card-body">
+                    <p class="text-center"><a class="btn btn-sm btn-success ">More</a>
+                    </p>
+                </div>
+            </div>
+        </div>{%endfor%}
+    </div>
+</div>
+
+{%endblock%}
