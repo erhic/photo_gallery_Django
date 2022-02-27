@@ -6,36 +6,28 @@ from .form import ImageForm
 
 
 # Create your views here.
-posts=[
+# posts=[
     
-    {'category':'Adventure',
-     'image':'epic',
-    #  'location':'Nairobi',
-     },
-    {'category':'Nature',
-     'image':'fashion',
-     'location':'Hawaii',
-     },
-    {'category':'Research',
-     'image':'documental',
-     'location':'Arusha',
-     },
+#     {'category':'Adventure',
+#      'image':'epic',
+#     #  'location':'Nairobi',
+#      },
+#     {'category':'Nature',
+#      'image':'fashion',
+#      'location':'Hawaii',
+#      },
+#     {'category':'Research',
+#      'image':'documental',
+#      'location':'Arusha',
+#      },
      
-]
+# ]
 
 def home(request):
-    context={'posts':Image.objects.all()}
+    form=ImageForm()
+    images = Image.objects.all().order_by('-id')
+    location = Location.objects.all()
+    categories = Category.objects.all()
+    context={'images': images, 'locations': location, 'categories': categories}
     return render (request,'home.html',context)
 
-def post(request):
-    form =ImageForm()
-    
-    if request.method=='POST':
-        form= ImageForm(request.POST)
-        if form.is_valid():
-            form.save()
-       
-        return redirect ('home-images')
-    context={'form':form}
-    return render(request,'postform.html',context)
-    

@@ -5,14 +5,44 @@
     <p></p>
 </div> -->
 
-<div class="container mx-auto mt-4">
+<div class="container bg-light mx-auto mt-4">
     <div class="row">{%for post in images%}
-        <div class="col-md-4">
-            <div class="card" style="width: 18rem;">
+        <div class="col-md-3">
+            <div class="card mt-2 mb-2" style="width: 15rem;">
                 <img src="{{post.image.url}}" class="card-img-top" style="height:40vh;" alt="...">
                 <div class="card-body">
-                    <p class="text-center"><a class="btn btn-sm btn-success ">More</a>
-                    </p>
+                    <span class="badge bg-primary mx-5">{{post.location}}</span>
+                </div>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#imageModal{{post.id}}">
+    View More
+  </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="imageModal{{post.id}}" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title text-center mx-5 px-2 h5 fw-bold" id="imageModalLabel"><span class="bg-warning  px-1 rounded text-white">{{post.category}}</span></h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div>
+                                <span class="badge bg-primary mx-5">{{post.location}}</span>
+                            </div>
+
+                            <div class="modal-body">
+                                <img src="{{post.image.url}}" class="card-img-top mb-2" style="height:40vh;" alt="...">
+                                <p class="h5 fw-bold bg-warning  rounded text-white text-center mt-2">Description</p>
+                                <p>{{post.description}}</p>
+                            </div>
+                            <div class="modal-footer">
+
+
+                                <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>{%endfor%}
