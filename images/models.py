@@ -10,12 +10,12 @@ from django.contrib.auth.models import User
 
 class Image(models.Model):
     name=models.CharField(max_length=150)
-    image = CloudinaryField('image')
+    image = models.ImageField(null=False,blank=False)
     description=models.TextField(max_length=1000)
     location=models.ForeignKey('Location',on_delete=models.SET_NULL,null=True)
     category=models.ForeignKey('Category',on_delete=models.SET_NULL,null=True)
-    user=models.ForeignKey(User ,on_delete=models.CASCADE)
-    date_posted=models.DateTimeField(default=timezone.now)
+    # user=models.ForeignKey(User ,on_delete=models.CASCADE)
+    # date_posted=models.DateTimeField(default=timezone.now)
     time_posted=models.DateTimeField(auto_now_add=True)
     
     # save image to database
@@ -57,8 +57,8 @@ class Image(models.Model):
 
     # search images
     @classmethod
-    def search_image(cls, search_term):
-        images = cls.objects.filter(name__icontains=search_term)
+    def search_image(cls, search_by):
+        images = cls.objects.filter(name__icontains=search_by)
         return images
 
     # delete image from database
@@ -74,7 +74,7 @@ class Image(models.Model):
         return self.name
     
 class Category(models.Model):
-    category=models.TextField(max_length=150)
+    name=models.TextField(max_length=150)
     
     # save category to database
     def save_category(self):
