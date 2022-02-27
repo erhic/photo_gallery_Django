@@ -10,7 +10,7 @@ from django.contrib.auth.models import User
 
 class Image(models.Model):
     name=models.CharField(max_length=150)
-    image = models.ImageField(null=False,blank=False)
+    image = CloudinaryField('image')
     description=models.TextField(max_length=1000)
     location=models.ForeignKey('Location',on_delete=models.SET_NULL,null=True)
     category=models.ForeignKey('Category',on_delete=models.SET_NULL,null=True)
